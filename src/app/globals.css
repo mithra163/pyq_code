@@ -271,6 +271,7 @@ code, pre { font-family: 'JetBrains Mono', monospace; }
   box-shadow: 0 0 0 3px rgba(14, 147, 0, 0.18);
 }
 .input::placeholder { color: var(--text-muted); }
+select.input option { background: var(--bg-secondary); color: var(--text-primary); font-weight: 500; }
 .input-group { display: flex; flex-direction: column; gap: 6px; }
 .input-label { font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); }
 .input-error { border-color: var(--error) !important; }

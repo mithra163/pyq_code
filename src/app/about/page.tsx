@@ -8,15 +8,11 @@ import {
   Terminal, ShieldCheck, Mail, MapPin, ExternalLink, Globe,
 } from 'lucide-react';
 
-export default function AboutPage() {
-  const [showPopup, setShowPopup] = useState(true);
+function UplinkPopup({ onClose }: { onClose: () => void }) {
   const [scrambleText, setScrambleText] = useState('Open Minds, Open Code, Endless Possibilities.');
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
 
   // Glitch/Scramble Effect on the Quote in the Popup
   useEffect(() => {
-    if (!showPopup) return;
     const originalText = 'Open Minds, Open Code, Endless Possibilities.';
     const chars = '!@#$%^&*()_+~|{}[]:;?><,./';
     let iterations = 0;
@@ -40,7 +36,100 @@ export default function AboutPage() {
     }, 45);
 
     return () => clearInterval(interval);
-  }, [showPopup]);
+  }, []);
+
+  return (
+    <div style={{
+      position: 'fixed', inset: 0, background: 'rgba(3,3,3,0.85)',
+      backdropFilter: 'blur(12px)', zIndex: 1000,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      animation: 'fade-in 0.25s ease-out',
+    }}>
+      {/* Cybernetic Glitch Panel */}
+      <div className="glass-card" style={{
+        width: '90%', maxWidth: 540, padding: 32, position: 'relative',
+        border: '2px solid var(--green-neon)',
+        boxShadow: '0 0 30px rgba(14, 147, 0, 0.3)',
+        animation: 'scale-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+        overflow: 'hidden',
+      }}>
+        {/* Cyber Scanline overlay */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))',
+          backgroundSize: '100% 4px, 6px 100%',
+          pointerEvents: 'none',
+          zIndex: 1,
+        }} />
+
+        {/* Glowing Laser corner ticks */}
+        <div style={{ position: 'absolute', top: 8, left: 8, width: 14, height: 14, borderTop: '2px solid var(--green-neon)', borderLeft: '2px solid var(--green-neon)' }} />
+        <div style={{ position: 'absolute', top: 8, right: 8, width: 14, height: 14, borderTop: '2px solid var(--green-neon)', borderRight: '2px solid var(--green-neon)' }} />
+        <div style={{ position: 'absolute', bottom: 8, left: 8, width: 14, height: 14, borderBottom: '2px solid var(--green-neon)', borderLeft: '2px solid var(--green-neon)' }} />
+        <div style={{ position: 'absolute', bottom: 8, right: 8, width: 14, height: 14, borderBottom: '2px solid var(--green-neon)', borderRight: '2px solid var(--green-neon)' }} />
+
+        {/* Title */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+          <Terminal size={18} style={{ color: 'var(--green-neon)', animation: 'pulse 1s infinite' }} />
+          <span style={{ fontSize: '0.8rem', letterSpacing: 2, fontFamily: 'JetBrains Mono, monospace', color: 'var(--green-neon)', fontWeight: 700 }}>
+            UPLINK_TRANSMISSION_DECRYPTED
+          </span>
+        </div>
+
+        {/* Quote with glitch effect */}
+        <div style={{
+          background: 'rgba(14, 147, 0, 0.04)',
+          border: '1px solid rgba(14, 147, 0, 0.2)',
+          borderRadius: 'var(--radius-md)',
+          padding: 24,
+          marginBottom: 24,
+          textAlign: 'center',
+          position: 'relative',
+        }}>
+          <h3 style={{
+            fontSize: '1.25rem',
+            color: '#fff',
+            fontFamily: 'JetBrains Mono, monospace',
+            margin: 0,
+            lineHeight: 1.6,
+            textShadow: '0 0 10px rgba(14, 147, 0, 0.6)',
+          }}>
+            "{scrambleText}"
+          </h3>
+        </div>
+
+        {/* Animated Soundwave Visualizer in Waveform */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3, height: 28, marginBottom: 24 }}>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((i) => (
+            <div key={i} style={{
+              width: 3,
+              backgroundColor: 'var(--green-neon)',
+              borderRadius: 1.5,
+              height: '100%',
+              transform: 'scaleY(0.2)',
+              transformOrigin: 'center',
+              animation: `equalizer-wave 1.${i % 5 + 1}s ease-in-out infinite alternate`,
+            }} />
+          ))}
+        </div>
+
+        {/* Dismiss button */}
+        <button
+          className="btn btn-primary"
+          onClick={onClose}
+          style={{ width: '100%', justifyContent: 'center', fontFamily: 'JetBrains Mono, monospace', letterSpacing: 1 }}
+        >
+          Acknowledge Uplink
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default function AboutPage() {
+  const [showPopup, setShowPopup] = useState(true);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -253,90 +342,7 @@ export default function AboutPage() {
 
       {/* ── Robotic/Electric Wave Quote Popup ───────── */}
       {showPopup && (
-        <div style={{
-          position: 'fixed', inset: 0, background: 'rgba(3,3,3,0.85)',
-          backdropFilter: 'blur(12px)', zIndex: 1000,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          animation: 'fade-in 0.25s ease-out',
-        }}>
-          {/* Cybernetic Glitch Panel */}
-          <div className="glass-card" style={{
-            width: '90%', maxWidth: 540, padding: 32, position: 'relative',
-            border: '2px solid var(--green-neon)',
-            boxShadow: '0 0 30px rgba(14, 147, 0, 0.3)',
-            animation: 'scale-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-            overflow: 'hidden',
-          }}>
-            {/* Cyber Scanline overlay */}
-            <div style={{
-              position: 'absolute', inset: 0,
-              background: 'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))',
-              backgroundSize: '100% 4px, 6px 100%',
-              pointerEvents: 'none',
-              zIndex: 1,
-            }} />
-
-            {/* Glowing Laser corner ticks */}
-            <div style={{ position: 'absolute', top: 8, left: 8, width: 14, height: 14, borderTop: '2px solid var(--green-neon)', borderLeft: '2px solid var(--green-neon)' }} />
-            <div style={{ position: 'absolute', top: 8, right: 8, width: 14, height: 14, borderTop: '2px solid var(--green-neon)', borderRight: '2px solid var(--green-neon)' }} />
-            <div style={{ position: 'absolute', bottom: 8, left: 8, width: 14, height: 14, borderBottom: '2px solid var(--green-neon)', borderLeft: '2px solid var(--green-neon)' }} />
-            <div style={{ position: 'absolute', bottom: 8, right: 8, width: 14, height: 14, borderBottom: '2px solid var(--green-neon)', borderRight: '2px solid var(--green-neon)' }} />
-
-            {/* Title */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
-              <Terminal size={18} style={{ color: 'var(--green-neon)', animation: 'pulse 1s infinite' }} />
-              <span style={{ fontSize: '0.8rem', letterSpacing: 2, fontFamily: 'JetBrains Mono, monospace', color: 'var(--green-neon)', fontWeight: 700 }}>
-                UPLINK_TRANSMISSION_DECRYPTED
-              </span>
-            </div>
-
-            {/* Quote with glitch effect */}
-            <div style={{
-              background: 'rgba(14, 147, 0, 0.04)',
-              border: '1px solid rgba(14, 147, 0, 0.2)',
-              borderRadius: 'var(--radius-md)',
-              padding: 24,
-              marginBottom: 24,
-              textAlign: 'center',
-              position: 'relative',
-            }}>
-              <h3 style={{
-                fontSize: '1.25rem',
-                color: '#fff',
-                fontFamily: 'JetBrains Mono, monospace',
-                margin: 0,
-                lineHeight: 1.6,
-                textShadow: '0 0 10px rgba(14, 147, 0, 0.6)',
-              }}>
-                "{scrambleText}"
-              </h3>
-            </div>
-
-            {/* Animated Soundwave Visualizer in Waveform */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3, height: 28, marginBottom: 24 }}>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((i) => (
-                <div key={i} style={{
-                  width: 3,
-                  backgroundColor: 'var(--green-neon)',
-                  borderRadius: 1.5,
-                  height: '100%',
-                  transform: 'scaleY(0.2)',
-                  transformOrigin: 'center',
-                  animation: `equalizer-wave 1.${i % 5 + 1}s ease-in-out infinite alternate`,
-                }} />
-              ))}
-            </div>
-
-            {/* Dismiss button */}
-            <button
-              className="btn btn-primary"
-              onClick={() => setShowPopup(false)}
-              style={{ width: '100%', justifyContent: 'center', fontFamily: 'JetBrains Mono, monospace', letterSpacing: 1 }}
-            >
-              Acknowledge Uplink
-            </button>
-          </div>
-        </div>
+        <UplinkPopup onClose={() => setShowPopup(false)} />
       )}
 
       {/* Embedded CSS Animations */}
