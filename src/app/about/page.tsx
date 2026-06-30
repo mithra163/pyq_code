@@ -48,8 +48,8 @@ function UplinkPopup({ onClose }: { onClose: () => void }) {
       {/* Cybernetic Glitch Panel */}
       <div className="glass-card" style={{
         width: '90%', maxWidth: 540, padding: 32, position: 'relative',
-        border: '2px solid var(--green-neon)',
-        boxShadow: '0 0 30px rgba(14, 147, 0, 0.3)',
+        border: '2px solid var(--green-primary)',
+        boxShadow: '0 0 30px rgba(18, 205, 0, 0.3)',
         animation: 'scale-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
         overflow: 'hidden',
       }}>
@@ -63,23 +63,23 @@ function UplinkPopup({ onClose }: { onClose: () => void }) {
         }} />
 
         {/* Glowing Laser corner ticks */}
-        <div style={{ position: 'absolute', top: 8, left: 8, width: 14, height: 14, borderTop: '2px solid var(--green-neon)', borderLeft: '2px solid var(--green-neon)' }} />
-        <div style={{ position: 'absolute', top: 8, right: 8, width: 14, height: 14, borderTop: '2px solid var(--green-neon)', borderRight: '2px solid var(--green-neon)' }} />
-        <div style={{ position: 'absolute', bottom: 8, left: 8, width: 14, height: 14, borderBottom: '2px solid var(--green-neon)', borderLeft: '2px solid var(--green-neon)' }} />
-        <div style={{ position: 'absolute', bottom: 8, right: 8, width: 14, height: 14, borderBottom: '2px solid var(--green-neon)', borderRight: '2px solid var(--green-neon)' }} />
+        <div style={{ position: 'absolute', top: 8, left: 8, width: 14, height: 14, borderTop: '2px solid var(--green-primary)', borderLeft: '2px solid var(--green-primary)' }} />
+        <div style={{ position: 'absolute', top: 8, right: 8, width: 14, height: 14, borderTop: '2px solid var(--green-primary)', borderRight: '2px solid var(--green-primary)' }} />
+        <div style={{ position: 'absolute', bottom: 8, left: 8, width: 14, height: 14, borderBottom: '2px solid var(--green-primary)', borderLeft: '2px solid var(--green-primary)' }} />
+        <div style={{ position: 'absolute', bottom: 8, right: 8, width: 14, height: 14, borderBottom: '2px solid var(--green-primary)', borderRight: '2px solid var(--green-primary)' }} />
 
         {/* Title */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
-          <Terminal size={18} style={{ color: 'var(--green-neon)', animation: 'pulse 1s infinite' }} />
-          <span style={{ fontSize: '0.8rem', letterSpacing: 2, fontFamily: 'JetBrains Mono, monospace', color: 'var(--green-neon)', fontWeight: 700 }}>
+          <Terminal size={18} style={{ color: 'var(--green-primary)', animation: 'pulse 1s infinite' }} />
+          <span style={{ fontSize: '0.8rem', letterSpacing: 2, fontFamily: 'JetBrains Mono, monospace', color: 'var(--green-primary)', fontWeight: 700 }}>
             UPLINK_TRANSMISSION_DECRYPTED
           </span>
         </div>
 
         {/* Quote with glitch effect */}
         <div style={{
-          background: 'rgba(14, 147, 0, 0.04)',
-          border: '1px solid rgba(14, 147, 0, 0.2)',
+          background: 'rgba(18, 205, 0, 0.04)',
+          border: '1px solid rgba(18, 205, 0, 0.2)',
           borderRadius: 'var(--radius-md)',
           padding: 24,
           marginBottom: 24,
@@ -92,9 +92,9 @@ function UplinkPopup({ onClose }: { onClose: () => void }) {
             fontFamily: 'JetBrains Mono, monospace',
             margin: 0,
             lineHeight: 1.6,
-            textShadow: '0 0 10px rgba(14, 147, 0, 0.6)',
+            textShadow: '0 0 10px rgba(18, 205, 0, 0.6)',
           }}>
-            "{scrambleText}"
+            &quot;{scrambleText}&quot;
           </h3>
         </div>
 
@@ -103,7 +103,7 @@ function UplinkPopup({ onClose }: { onClose: () => void }) {
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((i) => (
             <div key={i} style={{
               width: 3,
-              backgroundColor: 'var(--green-neon)',
+              backgroundColor: 'var(--green-primary)',
               borderRadius: 1.5,
               height: '100%',
               transform: 'scaleY(0.2)',
@@ -163,10 +163,10 @@ export default function AboutPage() {
         </div>
 
         {/* Mission Statement Header */}
-        <div style={{ marginBottom: 48, padding: 32, borderRadius: 'var(--radius-lg)', background: 'linear-gradient(135deg, rgba(14,147,0,0.1), rgba(124,58,237,0.05))', border: '1px solid rgba(14,147,0,0.3)', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)', backdropFilter: 'blur(5px)', display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <h2 style={{ fontSize: '1.4rem', fontFamily: 'JetBrains Mono, monospace', margin: 0, color: 'var(--green-neon)' }}>Our Mission</h2>
+        <div style={{ marginBottom: 48, padding: 32, borderRadius: 'var(--radius-lg)', background: 'linear-gradient(135deg, rgba(18, 205, 0,0.1), rgba(124,58,237,0.05))', border: '1px solid rgba(18, 205, 0,0.3)', boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)', backdropFilter: 'blur(5px)', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <h2 style={{ fontSize: '1.4rem', fontFamily: 'JetBrains Mono, monospace', margin: 0, color: 'var(--green-primary)' }}>Our Mission</h2>
           <p style={{ color: 'var(--text-primary)', lineHeight: 1.6, fontSize: '1.15rem', fontStyle: 'italic', margin: 0 }}>
-            "Building freedom through open source. Join AMC FOSS Club to collaborate, innovate, and contribute to real-world software that shapes the future."
+            &quot;Building freedom through open source. Join AMC FOSS Club to collaborate, innovate, and contribute to real-world software that shapes the future.&quot;
           </p>
         </div>
 
@@ -176,7 +176,7 @@ export default function AboutPage() {
           {/* Core Committee Dashboard */}
           <section id="core-committee">
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28, borderBottom: '1px solid var(--border)', paddingBottom: 12 }}>
-              <Users size={22} style={{ color: 'var(--green-neon)' }} />
+              <Users size={22} style={{ color: 'var(--green-primary)' }} />
               <h2 style={{ fontSize: '1.4rem', fontFamily: 'JetBrains Mono, monospace', margin: 0 }}>Core Committee Members</h2>
             </div>
             
@@ -190,9 +190,9 @@ export default function AboutPage() {
                     background: 'rgba(10, 10, 10, 0.4)',
                     backdropFilter: 'blur(16px)',
                     WebkitBackdropFilter: 'blur(16px)',
-                    border: activeCard === index ? '1px solid rgba(14, 147, 0, 0.8)' : '1px solid rgba(255, 255, 255, 0.05)',
+                    border: activeCard === index ? '1px solid rgba(18, 205, 0, 0.8)' : '1px solid rgba(255, 255, 255, 0.05)',
                     borderRadius: 'var(--radius-md)',
-                    boxShadow: activeCard === index ? '0 0 20px rgba(14, 147, 0, 0.4), inset 0 0 10px rgba(14, 147, 0, 0.1)' : '0 4px 30px rgba(0, 0, 0, 0.2)',
+                    boxShadow: activeCard === index ? '0 0 20px rgba(18, 205, 0, 0.4), inset 0 0 10px rgba(18, 205, 0, 0.1)' : '0 4px 30px rgba(0, 0, 0, 0.2)',
                     transition: 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
                     cursor: 'pointer',
                     transform: activeCard === index ? 'scale(1.02)' : 'scale(1)',
@@ -203,7 +203,7 @@ export default function AboutPage() {
                 >
                   <div style={{
                     position: 'absolute', inset: 0,
-                    background: 'radial-gradient(circle at top right, rgba(14, 147, 0, 0.15) 0%, transparent 60%)',
+                    background: 'radial-gradient(circle at top right, rgba(18, 205, 0, 0.15) 0%, transparent 60%)',
                     opacity: activeCard === index ? 1 : 0.3,
                     transition: 'opacity 0.3s ease',
                     pointerEvents: 'none'
@@ -211,17 +211,17 @@ export default function AboutPage() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 16, position: 'relative', zIndex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <Terminal size={14} style={{ color: 'var(--green-neon)' }} />
+                        <Terminal size={14} style={{ color: 'var(--green-primary)' }} />
                         <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'JetBrains Mono, monospace', letterSpacing: 1 }}>USR_{String(index + 1).padStart(3, '0')}</span>
                       </div>
-                      <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: activeCard === index ? 'var(--green-neon)' : 'rgba(255,255,255,0.1)', boxShadow: activeCard === index ? '0 0 10px var(--green-neon)' : 'none', transition: 'all 0.3s ease' }} />
+                      <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: activeCard === index ? 'var(--green-primary)' : 'rgba(255,255,255,0.1)', boxShadow: activeCard === index ? '0 0 10px var(--green-primary)' : 'none', transition: 'all 0.3s ease' }} />
                     </div>
                     <div>
                       <h3 style={{ fontSize: '1.15rem', margin: '0 0 8px 0', color: '#fff', fontFamily: 'JetBrains Mono, monospace', fontWeight: 600, letterSpacing: 0.5, textTransform: 'uppercase', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         &gt; {member.name}
                       </h3>
-                      <div style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(14, 147, 0, 0.05)', border: '1px solid rgba(14, 147, 0, 0.2)', padding: '4px 10px', borderRadius: '4px' }}>
-                        <p style={{ fontSize: '0.75rem', color: 'var(--green-neon)', margin: 0, fontFamily: 'Inter, sans-serif', fontWeight: 500, letterSpacing: 0.5 }}>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(18, 205, 0, 0.05)', border: '1px solid rgba(18, 205, 0, 0.2)', padding: '4px 10px', borderRadius: '4px' }}>
+                        <p style={{ fontSize: '0.75rem', color: 'var(--green-primary)', margin: 0, fontFamily: 'Inter, sans-serif', fontWeight: 500, letterSpacing: 0.5 }}>
                           {member.role}
                         </p>
                       </div>
@@ -235,7 +235,7 @@ export default function AboutPage() {
           {/* Wall of Fame */}
           <section id="wall-of-fame">
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28, borderBottom: '1px solid var(--border)', paddingBottom: 12 }}>
-              <Users size={22} style={{ color: 'var(--green-neon)' }} />
+              <Users size={22} style={{ color: 'var(--green-primary)' }} />
               <h2 style={{ fontSize: '1.4rem', fontFamily: 'JetBrains Mono, monospace', margin: 0 }}>Wall of Fame</h2>
             </div>
             
@@ -245,11 +245,11 @@ export default function AboutPage() {
                   We celebrate the core minds driving software freedom at Amrita. The AMCFOSS Club is a collaborative network of developers, designers, and systems architects building the next generation of academic utilities.
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 20 }}>
-                  <div className="glass-card" style={{ padding: 20, borderLeft: '3px solid var(--green-neon)' }}>
+                  <div className="glass-card" style={{ padding: 20, borderLeft: '3px solid var(--green-primary)' }}>
                     <h3 style={{ fontSize: '1rem', marginBottom: 4, fontFamily: 'JetBrains Mono, monospace' }}>Core Maintainers</h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>AMCFOSS Systems Group</p>
                   </div>
-                  <div className="glass-card" style={{ padding: 20, borderLeft: '3px solid var(--green-neon)' }}>
+                  <div className="glass-card" style={{ padding: 20, borderLeft: '3px solid var(--green-primary)' }}>
                     <h3 style={{ fontSize: '1rem', marginBottom: 4, fontFamily: 'JetBrains Mono, monospace' }}>Contributors</h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>30+ Student Developers</p>
                   </div>
@@ -269,7 +269,7 @@ export default function AboutPage() {
           {/* Hackathons */}
           <section id="hackathons">
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28, borderBottom: '1px solid var(--border)', paddingBottom: 12 }}>
-              <Trophy size={22} style={{ color: 'var(--green-neon)' }} />
+              <Trophy size={22} style={{ color: 'var(--green-primary)' }} />
               <h2 style={{ fontSize: '1.4rem', fontFamily: 'JetBrains Mono, monospace', margin: 0 }}>Hackathons</h2>
             </div>
 
@@ -299,7 +299,7 @@ export default function AboutPage() {
           {/* Workshops */}
           <section id="workshops">
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28, borderBottom: '1px solid var(--border)', paddingBottom: 12 }}>
-              <BookOpen size={22} style={{ color: 'var(--green-neon)' }} />
+              <BookOpen size={22} style={{ color: 'var(--green-primary)' }} />
               <h2 style={{ fontSize: '1.4rem', fontFamily: 'JetBrains Mono, monospace', margin: 0 }}>Workshops</h2>
             </div>
 
@@ -329,16 +329,16 @@ export default function AboutPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 40, alignItems: 'center', marginTop: 40 }} className="grid-responsive-about">
               <div className="mobile-order-2" style={{ position: 'relative', width: '100%', height: 210, borderRadius: 'var(--radius-xl)', overflow: 'hidden', border: '1px solid var(--border)' }}>
                 <Image
-                  src="/assets/images/club-group-photo-3.jpg"
+                  src="/assets/images/fw.jpeg"
                   alt="Fourth Wing Workshop"
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
               <div className="mobile-order-1">
-                <h3 style={{ fontSize: '1.15rem', marginBottom: 8, fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-primary)' }}>"Fourth Wing" Open Source Initiative</h3>
+                <h3 style={{ fontSize: '1.15rem', marginBottom: 8, fontFamily: 'JetBrains Mono, monospace', color: 'var(--text-primary)' }}>&quot;Fourth Wing&quot; Open Source Initiative</h3>
                 <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 20 }}>
-                  Our flagship workshop, "Fourth Wing", successfully engaged over 40 enthusiastic students. We guided them through the fundamentals of collaborative development, helping them learn, discover, and actively contribute to the vast ecosystem of open source software.
+                  Our flagship workshop, &quot;Fourth Wing&quot;, successfully engaged over 40 enthusiastic students. We guided them through the fundamentals of collaborative development, helping them learn, discover, and actively contribute to the vast ecosystem of open source software.
                 </p>
                 <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                   <span className="badge badge-green">40+ Students Engaged</span>
@@ -362,27 +362,27 @@ export default function AboutPage() {
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <Mail size={16} style={{ color: 'var(--green-neon)' }} />
+                    <Mail size={16} style={{ color: 'var(--green-primary)' }} />
                     <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>foss@amrita.edu</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <MapPin size={16} style={{ color: 'var(--green-neon)' }} />
+                    <MapPin size={16} style={{ color: 'var(--green-primary)' }} />
                     <span style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Amrita School of Engineering, Chennai</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <Globe size={16} style={{ color: 'var(--green-neon)' }} />
+                    <Globe size={16} style={{ color: 'var(--green-primary)' }} />
                     <a href="https://amcfoss.club" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--success)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
                       amcfoss.club <ExternalLink size={12} />
                     </a>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <Linkedin size={16} style={{ color: 'var(--green-neon)' }} />
+                    <Linkedin size={16} style={{ color: 'var(--green-primary)' }} />
                     <a href="https://www.linkedin.com/company/amcfoss/" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--text-primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
                       <strong>LinkedIn Profile</strong> <ExternalLink size={12} />
                     </a>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                    <Instagram size={16} style={{ color: 'var(--green-neon)' }} />
+                    <Instagram size={16} style={{ color: 'var(--green-primary)' }} />
                     <a href="https://www.instagram.com/amcfoss?igsh=M2tucHV0dzYwbjhq" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.9rem', color: 'var(--text-primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
                       Do follow us on Instagram <ExternalLink size={12} />
                     </a>

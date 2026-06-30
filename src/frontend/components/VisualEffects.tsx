@@ -61,8 +61,8 @@ export function VisualEffects() {
           cursor.style.width = '56px';
           cursor.style.height = '56px';
           cursor.style.borderRadius = '50%';
-          cursor.style.backgroundColor = 'rgba(14, 147, 0, 0.06)';
-          cursor.style.borderColor = 'rgba(14, 147, 0, 0.6)';
+          cursor.style.backgroundColor = 'rgba(18, 205, 0, 0.06)';
+          cursor.style.borderColor = 'rgba(18, 205, 0, 0.6)';
         } else {
           snapEl = interactive as HTMLElement;
           cursor.classList.add('cursor-magnetic');
@@ -72,8 +72,8 @@ export function VisualEffects() {
           cursor.style.width = `${rect.width + 12}px`;
           cursor.style.height = `${rect.height + 12}px`;
           cursor.style.borderRadius = style.borderRadius || '8px';
-          cursor.style.backgroundColor = 'rgba(14, 147, 0, 0.05)';
-          cursor.style.borderColor = 'rgba(14, 147, 0, 0.9)';
+          cursor.style.backgroundColor = 'rgba(18, 205, 0, 0.05)';
+          cursor.style.borderColor = 'rgba(18, 205, 0, 0.9)';
         }
       }
     };
@@ -92,8 +92,8 @@ export function VisualEffects() {
           cursor.style.width = '24px';
           cursor.style.height = '24px';
           cursor.style.borderRadius = '50%';
-          cursor.style.backgroundColor = 'rgba(14, 147, 0, 0.04)';
-          cursor.style.borderColor = 'var(--green-neon)';
+          cursor.style.backgroundColor = 'rgba(18, 205, 0, 0.04)';
+          cursor.style.borderColor = 'var(--green-primary)';
         }
       }
 
@@ -217,7 +217,7 @@ export function VisualEffects() {
       draw(c: CanvasRenderingContext2D) {
         c.beginPath();
         c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        c.fillStyle = `rgba(14, 147, 0, ${this.baseAlpha})`;
+        c.fillStyle = `rgba(18, 205, 0, ${this.baseAlpha})`;
         c.fill();
       }
     }
@@ -253,7 +253,7 @@ export function VisualEffects() {
 
       draw(c: CanvasRenderingContext2D) {
         const twinkle = Math.sin(Date.now() * 0.0018 + this.twinkleOffset) * 0.35 + 0.65;
-        c.fillStyle = `rgba(14, 147, 0, ${this.alpha * twinkle})`;
+        c.fillStyle = `rgba(18, 205, 0, ${this.alpha * twinkle})`;
         c.beginPath();
         c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         c.fill();
@@ -320,8 +320,8 @@ export function VisualEffects() {
 
       // 1. Draw soft glowing center-screen green nebula
       const centerGrad = ctx.createRadialGradient(width / 2, height / 2, 50, width / 2, height / 2, Math.max(width, height) * 0.7);
-      centerGrad.addColorStop(0, 'rgba(14, 147, 0, 0.045)');
-      centerGrad.addColorStop(0.5, 'rgba(14, 147, 0, 0.015)');
+      centerGrad.addColorStop(0, 'rgba(18, 205, 0, 0.045)');
+      centerGrad.addColorStop(0.5, 'rgba(18, 205, 0, 0.015)');
       centerGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = centerGrad;
       ctx.fillRect(0, 0, width, height);
@@ -329,8 +329,8 @@ export function VisualEffects() {
       // 2. Draw mouse-following soft green aura (space ambient connection)
       if (mouseX !== -1000 && mouseY !== -1000) {
         const mouseGrad = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 280);
-        mouseGrad.addColorStop(0, 'rgba(14, 147, 0, 0.045)');
-        mouseGrad.addColorStop(0.5, 'rgba(14, 147, 0, 0.01)');
+        mouseGrad.addColorStop(0, 'rgba(18, 205, 0, 0.045)');
+        mouseGrad.addColorStop(0.5, 'rgba(18, 205, 0, 0.01)');
         mouseGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
         ctx.fillStyle = mouseGrad;
         ctx.beginPath();
@@ -352,9 +352,9 @@ export function VisualEffects() {
         const progress = r.radius / r.maxRadius;
         const opacity = 1 - progress;
         if (opacity > 0) {
-          ctx.strokeStyle = `rgba(30, 219, 6, ${opacity * 0.25})`;
+          ctx.strokeStyle = `rgba(18, 205, 0, ${opacity * 0.25})`;
           ctx.shadowBlur = 8;
-          ctx.shadowColor = 'rgba(30, 219, 6, 0.4)';
+          ctx.shadowColor = 'rgba(18, 205, 0, 0.4)';
           ctx.beginPath();
           ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
           ctx.stroke();
@@ -399,7 +399,7 @@ export function VisualEffects() {
               ctx.beginPath();
               ctx.moveTo(p1.x, p1.y);
               ctx.lineTo(p2.x, p2.y);
-              ctx.strokeStyle = `rgba(30, 219, 6, ${opacity})`;
+              ctx.strokeStyle = `rgba(18, 205, 0, ${opacity})`;
               ctx.lineWidth = hoverForce > 0 ? 0.6 : 0.3;
               ctx.stroke();
             }
@@ -415,7 +415,7 @@ export function VisualEffects() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(mouseX, mouseY);
-            ctx.strokeStyle = `rgba(30, 219, 6, ${(1 - mdist / 180) * 0.1})`;
+            ctx.strokeStyle = `rgba(18, 205, 0, ${(1 - mdist / 180) * 0.1})`;
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
@@ -533,8 +533,8 @@ export function VisualEffects() {
           pointerEvents: 'none',
           backgroundSize: '45px 45px',
           backgroundImage: `
-            linear-gradient(to right, rgba(14, 147, 0, 0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(14, 147, 0, 0.03) 1px, transparent 1px)
+            linear-gradient(to right, rgba(18, 205, 0, 0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(18, 205, 0, 0.03) 1px, transparent 1px)
           `,
           transformStyle: 'preserve-3d',
           perspective: '1000px',
@@ -572,8 +572,8 @@ export function VisualEffects() {
           left: 0,
           width: 24,
           height: 24,
-          border: '1.5px solid var(--green-neon)',
-          background: 'rgba(14, 147, 0, 0.04)',
+          border: '1.5px solid var(--green-primary)',
+          background: 'rgba(18, 205, 0, 0.04)',
           borderRadius: '50%',
           pointerEvents: 'none',
           zIndex: 9999,

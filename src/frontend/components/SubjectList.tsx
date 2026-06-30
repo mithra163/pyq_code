@@ -57,11 +57,11 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
         gap: '16px',
         padding: '20px 24px',
         background: active ? 'var(--bg-card-hover)' : 'var(--bg-card)',
-        border: `1px solid ${active ? '#0E9300' : 'var(--border)'}`,
+        border: `1px solid ${active ? '#12cd00' : 'var(--border)'}`,
         borderRadius: 'var(--radius-md)',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         transform: active ? 'translateY(-3px)' : 'none',
-        boxShadow: active ? '0 8px 24px rgba(14, 147, 0, 0.08)' : 'none',
+        boxShadow: active ? '0 8px 24px rgba(18, 205, 0, 0.08)' : 'none',
         position: 'relative',
       }}
     >
@@ -74,9 +74,9 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
             fontWeight: 600,
             padding: '4px 10px',
             borderRadius: '6px',
-            background: active ? 'rgba(14, 147, 0, 0.12)' : 'var(--bg-secondary)',
-            border: `1px solid ${active ? 'rgba(14, 147, 0, 0.3)' : 'var(--border)'}`,
-            color: active ? '#0E9300' : 'var(--text-secondary)',
+            background: active ? 'rgba(18, 205, 0, 0.12)' : 'var(--bg-secondary)',
+            border: `1px solid ${active ? 'rgba(18, 205, 0, 0.3)' : 'var(--border)'}`,
+            color: active ? '#12cd00' : 'var(--text-secondary)',
             transition: 'all 0.2s ease',
           }}
         >
@@ -124,6 +124,7 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
             fontWeight: 700,
             color: 'var(--text-primary)',
             lineHeight: 1.3,
+            fontFamily: 'JetBrains Mono, monospace',
           }}
         >
           {subject.name}
@@ -149,9 +150,9 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
           textDecoration: 'none',
           fontSize: '0.8rem',
           fontWeight: 600,
-          color: active ? '#0E9300' : 'var(--text-secondary)',
-          background: active ? 'rgba(14, 147, 0, 0.08)' : 'rgba(255, 255, 255, 0.02)',
-          border: `1px solid ${active ? '#0E9300' : 'var(--border)'}`,
+          color: active ? '#12cd00' : 'var(--text-secondary)',
+          background: active ? 'rgba(18, 205, 0, 0.08)' : 'rgba(255, 255, 255, 0.02)',
+          border: `1px solid ${active ? '#12cd00' : 'var(--border)'}`,
           padding: '10px 14px',
           borderRadius: 'var(--radius-md)',
           transition: 'all 0.2s ease',

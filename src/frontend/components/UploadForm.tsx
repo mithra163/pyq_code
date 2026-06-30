@@ -154,8 +154,8 @@ export function UploadForm() {
   if (state === 'success') {
     return (
       <div style={{ textAlign: 'center', padding: '48px 24px' }}>
-        <div style={{ width: 64, height: 64, background: 'rgba(16,185,129,0.12)', border: '1px solid rgba(16,185,129,0.3)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-          <CheckCircle size={28} style={{ color: '#6ee7b7' }} />
+        <div style={{ width: 64, height: 64, background: 'rgba(18, 205, 0,0.12)', border: '1px solid rgba(18, 205, 0,0.3)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+          <CheckCircle size={28} style={{ color: '#12cd00' }} />
         </div>
         <h2 style={{ marginBottom: 10, color: 'var(--text-primary)' }}>Upload Successful!</h2>
         <p style={{ color: 'var(--text-muted)', marginBottom: 8 }}>
@@ -237,7 +237,7 @@ export function UploadForm() {
       </div>
 
       {/* Filename preview */}
-      <div style={{ padding: '10px 14px', background: 'rgba(124,58,237,0.06)', border: '1px solid rgba(124,58,237,0.15)', borderRadius: 'var(--radius-sm)' }}>
+      <div style={{ padding: '10px 14px', background: 'rgba(18, 205, 0,0.06)', border: '1px solid rgba(18, 205, 0,0.15)', borderRadius: 'var(--radius-sm)' }}>
         <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>File will be saved as: </span>
         <code style={{ fontSize: '0.85rem', color: 'var(--violet-light)', fontFamily: 'JetBrains Mono, monospace' }}>
           {courseTitle.trim() || 'SUBJECT_TITLE'}/{subjectCode || 'SUBJECT_CODE'}/{month}/{buildFilename()}
@@ -250,13 +250,13 @@ export function UploadForm() {
         <div
           onClick={() => !uploading && fileRef.current?.click()}
           style={{
-            border: `2px dashed ${file ? 'rgba(124,58,237,0.4)' : 'var(--border)'}`,
+            border: `2px dashed ${file ? 'rgba(18, 205, 0,0.4)' : 'var(--border)'}`,
             borderRadius: 'var(--radius-md)',
             padding: '28px 20px',
             textAlign: 'center',
             cursor: uploading ? 'not-allowed' : 'pointer',
             transition: 'border-color 0.2s, background 0.2s',
-            background: file ? 'rgba(124,58,237,0.04)' : 'transparent',
+            background: file ? 'rgba(18, 205, 0,0.04)' : 'transparent',
           }}
         >
           {file ? (

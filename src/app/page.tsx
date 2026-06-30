@@ -21,9 +21,9 @@ async function getRecentActivity() {
 }
 
 const FEATURES = [
-  { icon: GitBranch, title: 'Git-backed Storage', desc: 'Redundant, Git-backed intelligence nodes. Every paper is committed to the immutable GitHub core — permanently versioned and trace-recoverable.', color: 'var(--green-neon)' },
-  { icon: Shield, title: 'Audit Trail', desc: 'Cryptographic traceability. Every upload, extraction, and report is logged in the public ledger with verified GitHub identity headers.', color: 'var(--green-neon)' },
-  { icon: Zap, title: 'Instant Access', desc: 'Accelerated CDN extracts. Instant search query mapping with direct retrieval from raw repository assets. No walls, no gateways.', color: 'var(--green-neon)' },
+  { icon: GitBranch, title: 'Git-backed Storage', desc: 'Redundant, Git-backed intelligence nodes. Every paper is committed to the immutable GitHub core — permanently versioned and trace-recoverable.', color: 'var(--green-primary)' },
+  { icon: Shield, title: 'Audit Trail', desc: 'Cryptographic traceability. Every upload, extraction, and report is logged in the public ledger with verified GitHub identity headers.', color: 'var(--green-primary)' },
+  { icon: Zap, title: 'Instant Access', desc: 'Accelerated CDN extracts. Instant search query mapping with direct retrieval from raw repository assets. No walls, no gateways.', color: 'var(--green-primary)' },
 ];
 
 export default async function HomePage() {
@@ -37,7 +37,7 @@ export default async function HomePage() {
         <div style={{
           position: 'absolute', top: '20%', left: '50%', transform: 'translateX(-50%)',
           width: 600, height: 600, borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(0,200,83,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(18, 205, 0,0.06) 0%, transparent 70%)',
           pointerEvents: 'none', zIndex: 0,
         }} />
 
@@ -135,10 +135,8 @@ export default async function HomePage() {
           <div style={{
             maxWidth: 600, margin: '0 auto',
             padding: '52px 40px',
-            background: 'linear-gradient(145deg, rgba(0,200,83,0.08), rgba(0,230,118,0.03))',
-            border: '1px solid rgba(0,200,83,0.15)',
-            background: 'linear-gradient(145deg, rgba(14,147,0,0.08), rgba(14,147,0,0.02))',
-            border: '1px solid rgba(14,147,0,0.2)',
+            background: 'linear-gradient(145deg, rgba(18, 205, 0,0.08), rgba(18, 205, 0,0.02))',
+            border: '1px solid rgba(18, 205, 0,0.2)',
             borderRadius: 'var(--radius-xl)',
           }}>
             <h2 style={{ marginBottom: 14, fontFamily: 'JetBrains Mono, monospace' }}>Have a Paper to Share?</h2>

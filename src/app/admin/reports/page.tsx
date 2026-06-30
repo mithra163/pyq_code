@@ -17,7 +17,7 @@ export default function AdminReportsPage() {
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
   const [resolving, setResolving] = useState<string | null>(null);
-
+  const [deleting, setDeleting] = useState<string | null>(null);
   async function load() {
     setLoading(true);
     const res = await fetch('/api/admin/reports');
@@ -35,6 +35,19 @@ export default function AdminReportsPage() {
     });
     setReports((prev) => prev.filter((r) => r.id !== id));
     setResolving(null);
+  }
+
+  async function deletePaper(id: string) {
+    if (!window.confirm("Are you sure you want to completely delete this paper from the database and GitHub?")) return;
+    
+    setDeleting(id);
+    await fetch('/api/admin/reports', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ reportId: id }),
+    });
+    setReports((prev) => prev.filter((r) => r.id !== id));
+    setDeleting(null);
   }
 
   useEffect(() => { load(); }, []);
@@ -90,10 +103,19 @@ export default function AdminReportsPage() {
                     View Paper
                   </a>
                   <button
+                    id={`delete-${r.id}`}
+                    className="btn btn-danger btn-sm"
+                    onClick={() => deletePaper(r.id)}
+                    disabled={deleting === r.id || resolving === r.id}
+                  >
+                    {deleting === r.id ? <span className="spinner" /> : <AlertCircle size={13} />}
+                    Delete Paper
+                  </button>
+                  <button
                     id={`resolve-${r.id}`}
                     className="btn btn-primary btn-sm"
                     onClick={() => resolve(r.id)}
-                    disabled={resolving === r.id}
+                    disabled={resolving === r.id || deleting === r.id}
                   >
                     {resolving === r.id ? <span className="spinner" /> : <CheckCircle size={13} />}
                     Resolve

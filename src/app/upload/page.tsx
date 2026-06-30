@@ -31,7 +31,7 @@ export default function UploadPage() {
             {/* Guidelines */}
             <div className="glass-card" style={{ padding: 24 }}>
               <h3 style={{ fontSize: '0.95rem', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'JetBrains Mono, monospace' }}>
-                <Shield size={16} style={{ color: 'var(--green-neon)' }} /> Upload Guidelines
+                <Shield size={16} style={{ color: 'var(--green-primary)' }} /> Upload Guidelines
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {RULES.map(({ icon: Icon, text }) => (

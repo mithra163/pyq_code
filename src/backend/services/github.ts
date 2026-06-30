@@ -70,3 +70,32 @@ export function getFileDownloadUrl(subjectCode: string, subjectTitle: string | u
   const pathTitle = subjectTitle ? ` - ${subjectTitle}` : '';
   return `https://raw.githubusercontent.com/${owner}/${repo}/main/${subjectCode}${pathTitle}/${filename}`;
 }
+
+/**
+ * Delete a PDF from GitHub.
+ */
+export async function deleteFile(
+  subjectCode: string,
+  subjectTitle: string,
+  month: string,
+  filename: string,
+  deleterUsername: string
+): Promise<void> {
+  const path = `${subjectTitle}/${subjectCode}/${month}/${filename}`;
+
+  try {
+    const { data } = await octokit.repos.getContent({ owner, repo, path });
+    if (!Array.isArray(data) && data.sha) {
+      await octokit.repos.deleteFile({
+        owner,
+        repo,
+        path,
+        message: `Delete ${filename} from ${subjectCode} - deleted by @${deleterUsername}`,
+        sha: data.sha,
+      });
+    }
+  } catch (e: any) {
+    if (e.status === 404) return; // Already deleted or not found
+    throw e;
+  }
+}

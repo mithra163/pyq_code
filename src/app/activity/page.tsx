@@ -46,7 +46,7 @@ export default async function ActivityPage() {
           {/* Feed */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
-              <Activity size={18} style={{ color: 'var(--green-neon)' }} />
+              <Activity size={18} style={{ color: 'var(--green-primary)' }} />
               <h2 style={{ fontSize: '1.1rem', fontWeight: 600, fontFamily: 'JetBrains Mono, monospace' }}>Recent Uploads</h2>
             </div>
             <ActivityFeed items={items} />

@@ -58,8 +58,8 @@ export function ReportModal({ open, onClose, subjectCode, filename }: Props) {
     <Modal open={open} onClose={handleClose} title="Report Paper">
       {done ? (
         <div style={{ textAlign: 'center', padding: '16px 0' }}>
-          <div style={{ width: 52, height: 52, background: 'rgba(16,185,129,0.12)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
-            <Flag size={22} style={{ color: '#6ee7b7' }} />
+          <div style={{ width: 52, height: 52, background: 'rgba(18, 205, 0,0.12)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+            <Flag size={22} style={{ color: '#12cd00' }} />
           </div>
           <h3 style={{ marginBottom: 8, color: 'var(--text-primary)' }}>Report submitted</h3>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: 20 }}>

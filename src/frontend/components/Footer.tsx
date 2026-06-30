@@ -23,20 +23,20 @@ export function Footer() {
               </span>
             </div>
             <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', maxWidth: 260, lineHeight: 1.7, marginBottom: 16 }}>
-              Built with <Heart size={12} style={{ color: 'var(--green-neon)', fill: 'var(--green-neon)', display: 'inline', verticalAlign: 'middle' }} /> by AMCFOSS. Open Source under MIT License.
+              Built with <Heart size={12} style={{ color: 'var(--green-primary)', fill: 'var(--green-primary)', display: 'inline', verticalAlign: 'middle' }} /> by AMCFOSS. Open Source under MIT License.
             </p>
             {/* Pulsing System Status */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
               <span style={{
                 position: 'relative', display: 'inline-flex', width: 8, height: 8, borderRadius: '50%',
-                background: 'var(--green-neon)', boxShadow: '0 0 8px var(--green-neon)',
+                background: 'var(--green-primary)', boxShadow: '0 0 8px var(--green-primary)',
               }}>
                 <span style={{
-                  position: 'absolute', inset: 0, borderRadius: '50%', background: 'var(--green-neon)',
+                  position: 'absolute', inset: 0, borderRadius: '50%', background: 'var(--green-primary)',
                   animation: 'pulse-glow 1.8s infinite ease-in-out',
                 }} />
               </span>
-              <span>System Status: <span style={{ color: 'var(--green-neon)', fontWeight: 700 }}>OPERATIONAL</span></span>
+              <span>System Status: <span style={{ color: 'var(--green-primary)', fontWeight: 700 }}>OPERATIONAL</span></span>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export function Footer() {
           {/* Right Column: SECURE_UPLINK Terminal */}
           <div>
             <p style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', marginBottom: 14, fontFamily: 'JetBrains Mono, monospace' }}>
-              // SECURE_UPLINK
+              {"// SECURE_UPLINK"}
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
               <a href="mailto:foss@ch.amrita.edu"
@@ -102,7 +102,7 @@ export function Footer() {
             © {year} AMCFOSS. Open Source under MIT License.
           </p>
           <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 5 }}>
-            Built with <Heart size={12} style={{ color: 'var(--green-neon)', fill: 'var(--green-neon)' }} /> by <a href="https://github.com/amcfoss" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', fontWeight: 600, textDecoration: 'none' }}>AMCFOSS</a>
+            Built with <Heart size={12} style={{ color: 'var(--green-primary)', fill: 'var(--green-primary)' }} /> by <a href="https://github.com/amcfoss" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', fontWeight: 600, textDecoration: 'none' }}>AMCFOSS</a>
           </p>
         </div>
       </div>

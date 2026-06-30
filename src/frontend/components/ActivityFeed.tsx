@@ -52,12 +52,12 @@ export function ActivityFeed({ items, loading }: Props) {
         <div key={item.id} className="glass-card" style={{ padding: '14px 18px', display: 'flex', alignItems: 'center', gap: 14 }}>
           <div style={{
             width: 38, height: 38, flexShrink: 0,
-            background: 'rgba(14, 147, 0, 0.12)',
-            border: '1px solid rgba(14, 147, 0, 0.2)',
+            background: 'rgba(18, 205, 0, 0.12)',
+            border: '1px solid rgba(18, 205, 0, 0.2)',
             borderRadius: 9,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            <Upload size={15} style={{ color: 'var(--green-neon)' }} />
+            <Upload size={15} style={{ color: 'var(--green-primary)' }} />
           </div>
 
           <div style={{ flex: 1, minWidth: 0 }}>

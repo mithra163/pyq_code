@@ -69,7 +69,7 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
           >
             <Icons.AlertCircle size={28} />
           </div>
-          <h2 style={{ marginBottom: '12px' }}>Department Not Found</h2>
+          <h2 style={{ marginBottom: '12px', fontFamily: 'JetBrains Mono, monospace' }}>Department Not Found</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '28px' }}>
             The department route &quot;{params.department}&quot; does not exist. Please check the URL or return to the catalog.
           </p>
@@ -150,15 +150,15 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
           marginBottom: '24px'
         }}
       >
-        <Link href="/" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0E9300'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+        <Link href="/" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#12cd00'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
           Home
         </Link>
         <Icons.ChevronRight size={14} style={{ color: 'var(--text-muted)' }} />
-        <Link href="/departments" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0E9300'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+        <Link href="/departments" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#12cd00'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
           Departments
         </Link>
         <Icons.ChevronRight size={14} style={{ color: 'var(--text-muted)' }} />
-        <span style={{ color: '#0E9300', fontWeight: 600 }}>{dept.name.replace('Computer Science and Engineering', 'CSE')}</span>
+        <span style={{ color: '#12cd00', fontWeight: 600 }}>{dept.name.replace('Computer Science and Engineering', 'CSE')}</span>
       </nav>
 
       {/* Hero card showing department info */}
@@ -167,7 +167,7 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
           display: 'flex',
           alignItems: 'center',
           gap: '24px',
-          background: 'linear-gradient(145deg, rgba(14, 147, 0, 0.05) 0%, rgba(7, 11, 24, 0.4) 100%)',
+          background: 'linear-gradient(145deg, rgba(18, 205, 0, 0.05) 0%, rgba(7, 11, 24, 0.4) 100%)',
           border: '1px solid var(--border)',
           borderRadius: 'var(--radius-lg)',
           padding: '32px',
@@ -180,19 +180,19 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
             width: '56px',
             height: '56px',
             borderRadius: '14px',
-            background: 'rgba(14, 147, 0, 0.15)',
-            border: '1px solid rgba(14, 147, 0, 0.3)',
+            background: 'rgba(18, 205, 0, 0.15)',
+            border: '1px solid rgba(18, 205, 0, 0.3)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#0E9300',
+            color: '#12cd00',
             flexShrink: 0,
           }}
         >
           <IconComponent size={26} />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          <h1 style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+          <h1 style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', fontWeight: 800, color: 'var(--text-primary)', lineHeight: 1.2, fontFamily: 'JetBrains Mono, monospace' }}>
             {dept.name}
           </h1>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
@@ -205,7 +205,7 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
       <div style={{ marginBottom: '32px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}>
           <div>
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px', fontFamily: 'JetBrains Mono, monospace' }}>
               Course Subjects
             </h2>
             <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
@@ -250,7 +250,7 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
                   color: 'var(--text-primary)',
                   outline: 'none',
                 }}
-                onFocus={(e) => e.target.style.borderColor = '#0E9300'}
+                onFocus={(e) => e.target.style.borderColor = '#12cd00'}
                 onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
               />
               {searchQuery && (
@@ -286,12 +286,12 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
                 fontWeight: 600,
                 cursor: 'pointer',
                 transition: 'all 0.2s',
-                background: showFavouritesOnly ? 'rgba(14, 147, 0, 0.15)' : 'rgba(255, 255, 255, 0.02)',
-                color: showFavouritesOnly ? '#0E9300' : 'var(--text-secondary)',
-                border: `1px solid ${showFavouritesOnly ? '#0E9300' : 'var(--border)'}`,
+                background: showFavouritesOnly ? 'rgba(18, 205, 0, 0.15)' : 'rgba(255, 255, 255, 0.02)',
+                color: showFavouritesOnly ? '#12cd00' : 'var(--text-secondary)',
+                border: `1px solid ${showFavouritesOnly ? '#12cd00' : 'var(--border)'}`,
               }}
             >
-              <Icons.Star size={15} fill={showFavouritesOnly ? '#0E9300' : 'none'} />
+              <Icons.Star size={15} fill={showFavouritesOnly ? '#12cd00' : 'none'} />
               <span>Favourites Only</span>
             </button>
           </div>
@@ -307,9 +307,9 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
                 fontWeight: 600,
                 cursor: 'pointer',
                 transition: 'all 0.2s',
-                background: selectedSemester === null ? '#0E9300' : 'rgba(255, 255, 255, 0.03)',
+                background: selectedSemester === null ? '#12cd00' : 'rgba(255, 255, 255, 0.03)',
                 color: selectedSemester === null ? '#ffffff' : 'var(--text-secondary)',
-                border: `1px solid ${selectedSemester === null ? '#0E9300' : 'var(--border)'}`,
+                border: `1px solid ${selectedSemester === null ? '#12cd00' : 'var(--border)'}`,
               }}
             >
               All Semesters
@@ -325,9 +325,9 @@ export default function DepartmentPage({ params }: DepartmentPageProps) {
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'all 0.2s',
-                  background: selectedSemester === sem ? '#0E9300' : 'rgba(255, 255, 255, 0.03)',
+                  background: selectedSemester === sem ? '#12cd00' : 'rgba(255, 255, 255, 0.03)',
                   color: selectedSemester === sem ? '#ffffff' : 'var(--text-secondary)',
-                  border: `1px solid ${selectedSemester === sem ? '#0E9300' : 'var(--border)'}`,
+                  border: `1px solid ${selectedSemester === sem ? '#12cd00' : 'var(--border)'}`,
                 }}
               >
                 Semester {sem}

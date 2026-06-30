@@ -33,7 +33,7 @@ export const NeonUfo: React.FC = () => {
     
     const cx = width / 2;
     const cy = height / 2;
-    const neonColor = '#00ffcc';
+    const neonColor = '#12cd00';
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -85,8 +85,8 @@ export const NeonUfo: React.FC = () => {
       ctx.quadraticCurveTo(0, 100, 35, 90);
       ctx.lineTo(18, 12);
       const beamGradient = ctx.createLinearGradient(0, 12, 0, 100);
-      beamGradient.addColorStop(0, 'rgba(0, 255, 204, 0.4)');
-      beamGradient.addColorStop(1, 'rgba(0, 255, 204, 0)');
+      beamGradient.addColorStop(0, 'rgba(18, 205, 0, 0.4)');
+      beamGradient.addColorStop(1, 'rgba(18, 205, 0, 0)');
       ctx.fillStyle = beamGradient;
       ctx.fill();
 
@@ -160,7 +160,7 @@ export const NeonUfo: React.FC = () => {
         
         ctx.beginPath();
         ctx.arc(0, 0, shockwaveRadius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(0, 255, 204, ${1 - shockwaveRadius / 200})`;
+        ctx.strokeStyle = `rgba(18, 205, 0, ${1 - shockwaveRadius / 200})`;
         ctx.lineWidth = 4;
         ctx.shadowBlur = 20;
         ctx.shadowColor = neonColor;
@@ -169,7 +169,7 @@ export const NeonUfo: React.FC = () => {
         if (shockwaveRadius > 20) {
           ctx.beginPath();
           ctx.arc(0, 0, shockwaveRadius - 20, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(0, 255, 204, ${1 - (shockwaveRadius - 20) / 200})`;
+          ctx.strokeStyle = `rgba(18, 205, 0, ${1 - (shockwaveRadius - 20) / 200})`;
           ctx.lineWidth = 2;
           ctx.stroke();
         }

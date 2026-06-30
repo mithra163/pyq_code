@@ -59,7 +59,7 @@ export default async function DashboardPage() {
           {[
             { icon: FileText, label: 'Papers Uploaded', value: papers.length, color: 'var(--violet-light)' },
             { icon: Download, label: 'Total Downloads', value: totalDownloads, color: 'var(--cyan-light)' },
-            { icon: Upload, label: 'Active Papers', value: activeCount, color: '#6ee7b7' },
+            { icon: Upload, label: 'Active Papers', value: activeCount, color: '#12cd00' },
             { icon: AlertCircle, label: 'Flagged', value: flaggedCount, color: '#fca5a5' },
           ].map(({ icon: Icon, label, value, color }) => (
             <div key={label} className="stat-card" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
