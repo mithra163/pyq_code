@@ -44,7 +44,7 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
       <div
         style={{
           background: active ? 'var(--bg-card-hover)' : 'var(--bg-card)',
-          border: `1px solid ${active ? '#12cd00' : 'var(--border)'}`,
+          border: `1px solid ${active ? '#0E9300' : 'var(--border)'}`,
           borderRadius: 'var(--radius-lg)',
           padding: '28px 24px',
           height: '100%',
@@ -56,7 +56,7 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           transform: active ? 'translateY(-6px)' : 'none',
           boxShadow: active 
-            ? '0 12px 30px rgba(18, 205, 0, 0.15)' 
+            ? '0 12px 30px rgba(14, 147, 0, 0.15)' 
             : 'var(--shadow-sm)',
         }}
       >
@@ -67,13 +67,13 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
               width: '48px',
               height: '48px',
               borderRadius: '12px',
-              background: active ? 'rgba(18, 205, 0, 0.12)' : 'var(--bg-secondary)',
-              border: `1px solid ${active ? 'rgba(18, 205, 0, 0.3)' : 'var(--border)'}`,
+              background: active ? 'rgba(14, 147, 0, 0.12)' : 'var(--bg-secondary)',
+              border: `1px solid ${active ? 'rgba(14, 147, 0, 0.3)' : 'var(--border)'}`,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               transition: 'all 0.3s ease',
-              color: active ? '#12cd00' : 'var(--text-secondary)',
+              color: active ? '#0E9300' : 'var(--text-secondary)',
             }}
           >
             <IconComponent size={22} />
@@ -83,11 +83,11 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
             style={{
               fontSize: '0.75rem',
               fontWeight: 600,
-              color: '#12cd00',
-              background: 'rgba(18, 205, 0, 0.08)',
+              color: '#0E9300',
+              background: 'rgba(14, 147, 0, 0.08)',
               padding: '4px 10px',
               borderRadius: '8px',
-              border: '1px solid rgba(18, 205, 0, 0.15)',
+              border: '1px solid rgba(14, 147, 0, 0.15)',
               fontFamily: 'system-ui, -apple-system, sans-serif',
             }}
           >
@@ -101,10 +101,9 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
             style={{
               fontSize: '1.15rem',
               fontWeight: 700,
-              color: active ? '#12cd00' : 'var(--text-primary)',
+              color: active ? '#0E9300' : 'var(--text-primary)',
               transition: 'color 0.2s ease',
               lineHeight: 1.3,
-              fontFamily: 'JetBrains Mono, monospace',
             }}
           >
             {department.name}
@@ -129,7 +128,7 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
             gap: '6px',
             fontSize: '0.8125rem',
             fontWeight: 600,
-            color: active ? '#12cd00' : 'var(--text-muted)',
+            color: active ? '#0E9300' : 'var(--text-muted)',
             transition: 'color 0.2s ease',
           }}
         >

@@ -39,10 +39,10 @@ export default function DepartmentsPage() {
   const filterDepartmentsByDomain = (deptId: string, domain: string): boolean => {
     if (domain === 'All') return true;
     if (domain === 'Computer Science') {
-      return ['cse', 'cys', 'cse-ai', 'aids', 'cce', 'rai'].includes(deptId);
+      return ['cse', 'cys', 'cse-ai', 'aids', 'cce', 'rai', 'mtech-cse'].includes(deptId);
     }
     if (domain === 'Electronics') {
-      return ['ece', 'cce'].includes(deptId);
+      return ['ece', 'cce', 'mtech-vlsi'].includes(deptId);
     }
     if (domain === 'Mechanical') {
       return ['mech', 'rai', 'are'].includes(deptId);
@@ -134,11 +134,11 @@ export default function DepartmentsPage() {
           marginBottom: '32px'
         }}
       >
-        <Link href="/" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#12cd00'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
+        <Link href="/" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#0E9300'} onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}>
           Home
         </Link>
         <ChevronRight size={14} style={{ color: 'var(--text-muted)' }} />
-        <span style={{ color: '#12cd00', fontWeight: 600 }}>Departments</span>
+        <span style={{ color: '#0E9300', fontWeight: 600 }}>Departments</span>
       </nav>
 
       {/* Header section with green branding and lucide icons */}
@@ -158,20 +158,20 @@ export default function DepartmentsPage() {
             width: '56px',
             height: '56px',
             borderRadius: '16px',
-            background: 'rgba(18, 205, 0, 0.1)',
-            border: '1px solid rgba(18, 205, 0, 0.3)',
+            background: 'rgba(14, 147, 0, 0.1)',
+            border: '1px solid rgba(14, 147, 0, 0.3)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#12cd00',
+            color: '#0E9300',
             marginBottom: '8px',
           }}
         >
           <GraduationCap size={28} />
         </div>
         
-        <h1 style={{ fontWeight: 800, fontSize: 'clamp(2.25rem, 5vw, 3rem)', lineHeight: 1.1, fontFamily: 'JetBrains Mono, monospace' }}>
-          Academic <span style={{ color: '#12cd00' }}>Programmes</span>
+        <h1 style={{ fontWeight: 800, fontSize: 'clamp(2.25rem, 5vw, 3rem)', lineHeight: 1.1 }}>
+          Academic <span style={{ color: '#0E9300' }}>Programmes</span>
         </h1>
         
         <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
@@ -184,7 +184,7 @@ export default function DepartmentsPage() {
         <div style={{ marginBottom: '32px', background: 'rgba(255, 255, 255, 0.01)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)', padding: '20px 24px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 600 }}>
-              <Clock size={16} style={{ color: '#12cd00' }} />
+              <Clock size={16} style={{ color: '#0E9300' }} />
               <span>Recently Viewed</span>
             </div>
             <button 
@@ -217,9 +217,9 @@ export default function DepartmentsPage() {
                   transition: 'all 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#12cd00';
-                  e.currentTarget.style.color = '#12cd00';
-                  e.currentTarget.style.background = 'rgba(18, 205, 0, 0.05)';
+                  e.currentTarget.style.borderColor = '#0E9300';
+                  e.currentTarget.style.color = '#0E9300';
+                  e.currentTarget.style.background = 'rgba(14, 147, 0, 0.05)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'var(--border)';
@@ -269,7 +269,7 @@ export default function DepartmentsPage() {
                 outline: 'none',
                 transition: 'border-color 0.2s',
               }}
-              onFocus={(e) => e.target.style.borderColor = '#12cd00'}
+              onFocus={(e) => e.target.style.borderColor = '#0E9300'}
               onBlur={(e) => e.target.style.borderColor = 'var(--border)'}
             />
             {searchQuery && (
@@ -308,14 +308,14 @@ export default function DepartmentsPage() {
                 fontWeight: 600,
                 cursor: 'pointer',
                 transition: 'all 0.2s',
-                background: selectedDomain === domain ? '#12cd00' : 'rgba(255, 255, 255, 0.03)',
+                background: selectedDomain === domain ? '#0E9300' : 'rgba(255, 255, 255, 0.03)',
                 color: selectedDomain === domain ? '#ffffff' : 'var(--text-secondary)',
-                border: `1px solid ${selectedDomain === domain ? '#12cd00' : 'var(--border)'}`,
+                border: `1px solid ${selectedDomain === domain ? '#0E9300' : 'var(--border)'}`,
               }}
               onMouseEnter={(e) => {
                 if (selectedDomain !== domain) {
-                  e.currentTarget.style.borderColor = '#12cd00';
-                  e.currentTarget.style.color = '#12cd00';
+                  e.currentTarget.style.borderColor = '#0E9300';
+                  e.currentTarget.style.color = '#0E9300';
                 }
               }}
               onMouseLeave={(e) => {
@@ -333,9 +333,9 @@ export default function DepartmentsPage() {
 
       {/* Main Results Body */}
       {searchQuery.trim() !== '' && matchedSubjects.length > 0 && (
-        <div style={{ marginBottom: '40px', background: 'rgba(18, 205, 0, 0.02)', border: '1px solid rgba(18, 205, 0, 0.15)', borderRadius: 'var(--radius-lg)', padding: '24px' }}>
-          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', fontFamily: 'JetBrains Mono, monospace' }}>
-            <BookOpen size={18} style={{ color: '#12cd00' }} />
+        <div style={{ marginBottom: '40px', background: 'rgba(14, 147, 0, 0.02)', border: '1px solid rgba(14, 147, 0, 0.15)', borderRadius: 'var(--radius-lg)', padding: '24px' }}>
+          <h2 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+            <BookOpen size={18} style={{ color: '#0E9300' }} />
             <span>Matching Subjects ({matchedSubjects.length})</span>
           </h2>
           <div className="subject-results-grid">
@@ -355,7 +355,7 @@ export default function DepartmentsPage() {
                   transition: 'all 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#12cd00';
+                  e.currentTarget.style.borderColor = '#0E9300';
                   e.currentTarget.style.background = 'var(--bg-card-hover)';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
@@ -369,7 +369,7 @@ export default function DepartmentsPage() {
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', padding: '3px 8px', borderRadius: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}>
                     {subject.code}
                   </span>
-                  <span style={{ fontSize: '0.72rem', color: '#12cd00', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.72rem', color: '#0E9300', fontWeight: 600 }}>
                     {department.name.replace('Computer Science and Engineering', 'CSE')}
                   </span>
                 </div>
@@ -386,7 +386,7 @@ export default function DepartmentsPage() {
       )}
 
       {/* Departments Grid */}
-      <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '20px', fontFamily: 'JetBrains Mono, monospace' }}>
+      <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '20px' }}>
         {selectedDomain} Departments ({filteredDepartments.length})
       </h2>
       

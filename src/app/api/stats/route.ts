@@ -10,16 +10,20 @@ export async function GET() {
     const snap = await db.collection('uploads').where('status', '==', 'active').get();
 
     let totalDownloads = 0;
-    const subjects = new Set<string>();
+    const paperCounts: Record<string, number> = {};
     snap.docs.forEach((d) => {
       totalDownloads += d.data().downloadCount || 0;
-      subjects.add(d.data().subjectCode);
+      const code = d.data().subjectCode;
+      if (code) {
+        paperCounts[code] = (paperCounts[code] || 0) + 1;
+      }
     });
 
     return NextResponse.json({
       totalPapers: snap.size,
       totalDownloads,
-      totalSubjects: subjects.size,
+      totalSubjects: Object.keys(paperCounts).length,
+      paperCounts,
     });
   } catch (err) {
     console.error('[stats]', err);

@@ -42,7 +42,7 @@ export default async function AdminDashboard() {
 
   const cards = [
     { icon: FileText, label: 'Total Papers', value: uploadsSnap.size, color: 'var(--violet-light)', href: '/admin/logs' },
-    { icon: Upload, label: 'Active Papers', value: activeCount, color: '#12cd00', href: '/admin/logs?status=active' },
+    { icon: Upload, label: 'Active Papers', value: activeCount, color: '#6ee7b7', href: '/admin/logs?status=active' },
     { icon: Download, label: 'Total Downloads', value: totalDownloads, color: 'var(--cyan-light)', href: '/admin/analytics' },
     { icon: Flag, label: 'Pending Reports', value: reportsSnap.size, color: '#fca5a5', href: '/admin/reports' },
     { icon: AlertCircle, label: 'Flagged Papers', value: flaggedCount, color: '#fcd34d', href: '/admin/logs?status=flagged' },

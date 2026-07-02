@@ -8,9 +8,10 @@ interface SubjectListProps {
   subjects: Subject[];
   favourites: string[];
   onToggleFavourite: (code: string) => void;
+  paperCounts?: Record<string, number>;
 }
 
-export function SubjectList({ subjects, favourites, onToggleFavourite }: SubjectListProps) {
+export function SubjectList({ subjects, favourites, onToggleFavourite, paperCounts = {} }: SubjectListProps) {
   if (subjects.length === 0) {
     return (
       <div style={{ padding: '24px', color: 'var(--text-muted)', fontSize: '0.875rem', fontStyle: 'italic', textAlign: 'center' }}>
@@ -27,6 +28,7 @@ export function SubjectList({ subjects, favourites, onToggleFavourite }: Subject
           subject={subject} 
           isFavourite={favourites.includes(subject.code)}
           onToggle={() => onToggleFavourite(subject.code)}
+          paperCount={paperCounts[subject.code] || 0}
         />
       ))}
     </div>
@@ -37,9 +39,10 @@ interface SubjectItemProps {
   subject: Subject;
   isFavourite: boolean;
   onToggle: () => void;
+  paperCount?: number;
 }
 
-function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
+function SubjectItem({ subject, isFavourite, onToggle, paperCount = 0 }: SubjectItemProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
@@ -57,11 +60,11 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
         gap: '16px',
         padding: '20px 24px',
         background: active ? 'var(--bg-card-hover)' : 'var(--bg-card)',
-        border: `1px solid ${active ? '#12cd00' : 'var(--border)'}`,
+        border: `1px solid ${active ? '#0E9300' : 'var(--border)'}`,
         borderRadius: 'var(--radius-md)',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         transform: active ? 'translateY(-3px)' : 'none',
-        boxShadow: active ? '0 8px 24px rgba(18, 205, 0, 0.08)' : 'none',
+        boxShadow: active ? '0 8px 24px rgba(14, 147, 0, 0.08)' : 'none',
         position: 'relative',
       }}
     >
@@ -74,9 +77,9 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
             fontWeight: 600,
             padding: '4px 10px',
             borderRadius: '6px',
-            background: active ? 'rgba(18, 205, 0, 0.12)' : 'var(--bg-secondary)',
-            border: `1px solid ${active ? 'rgba(18, 205, 0, 0.3)' : 'var(--border)'}`,
-            color: active ? '#12cd00' : 'var(--text-secondary)',
+            background: active ? 'rgba(14, 147, 0, 0.12)' : 'var(--bg-secondary)',
+            border: `1px solid ${active ? 'rgba(14, 147, 0, 0.3)' : 'var(--border)'}`,
+            color: active ? '#0E9300' : 'var(--text-secondary)',
             transition: 'all 0.2s ease',
           }}
         >
@@ -124,7 +127,6 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
             fontWeight: 700,
             color: 'var(--text-primary)',
             lineHeight: 1.3,
-            fontFamily: 'JetBrains Mono, monospace',
           }}
         >
           {subject.name}
@@ -135,7 +137,20 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
           {subject.typicalSemester && (
             <span>Usually offered in Semester {subject.typicalSemester}</span>
           )}
-          <span>Semester may vary by batch.</span>
+          <span style={{
+            fontSize: '0.72rem',
+            fontWeight: 600,
+            color: paperCount > 0 ? '#10B981' : '#F59E0B',
+            background: paperCount > 0 ? 'rgba(16, 185, 129, 0.06)' : 'rgba(245, 158, 11, 0.06)',
+            padding: '4px 8px',
+            borderRadius: '6px',
+            marginTop: '6px',
+            border: `1px solid ${paperCount > 0 ? 'rgba(16, 185, 129, 0.12)' : 'rgba(245, 158, 11, 0.12)'}`,
+            alignSelf: 'flex-start',
+            display: 'inline-flex'
+          }}>
+            {paperCount > 0 ? `${paperCount} Paper${paperCount > 1 ? 's' : ''} Available` : 'No Papers Uploaded'}
+          </span>
         </div>
       </div>
 
@@ -150,9 +165,9 @@ function SubjectItem({ subject, isFavourite, onToggle }: SubjectItemProps) {
           textDecoration: 'none',
           fontSize: '0.8rem',
           fontWeight: 600,
-          color: active ? '#12cd00' : 'var(--text-secondary)',
-          background: active ? 'rgba(18, 205, 0, 0.08)' : 'rgba(255, 255, 255, 0.02)',
-          border: `1px solid ${active ? '#12cd00' : 'var(--border)'}`,
+          color: active ? '#0E9300' : 'var(--text-secondary)',
+          background: active ? 'rgba(14, 147, 0, 0.08)' : 'rgba(255, 255, 255, 0.02)',
+          border: `1px solid ${active ? '#0E9300' : 'var(--border)'}`,
           padding: '10px 14px',
           borderRadius: 'var(--radius-md)',
           transition: 'all 0.2s ease',
